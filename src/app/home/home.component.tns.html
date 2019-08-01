@@ -1,0 +1,49 @@
+<TabView selectedTabTextColor="white" tabBackgroundColor="orangered" tabTextFontSize="16"
+    androidSelectedTabHighlightColor="green">
+    <StackLayout *tabItem="{title: 'List View'}">
+        <GridLayout rows="auto auto" columns="*" sdkExampleTitle sdkToggleNavButton>
+            <ActionBar title="Products"></ActionBar>
+            <SearchBar row="0" hint="Search" (clear)="onClear($event)" (textChange)="onSubmit($event)"
+                (submit)="onSubmit($event)" (submit)="onSubmit($event)"></SearchBar>
+        </GridLayout>
+        <ListView row="1" [items]="myItems" class="list-group" style="height: 100%">
+            <ng-template let-item="item">
+                <GridLayout class="item list-group-item">
+                    <Label [text]="item" class="list-group-item-heading" (tap)="openProductDetailModal(item)"></Label>
+                </GridLayout>
+            </ng-template>
+        </ListView>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Scroll View'}">
+        <ScrollView orientation="horizontal" sdkExampleTitle sdkToggleNavButton>
+            <GridLayout class="m-15"
+                columns="auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto">
+                <Image src="~/assets/user-72-16.jpg" stretch="none" class="img-rounded" col="0"></Image>
+                <Image src="~/assets/user-72-17.jpg" stretch="none" class="img-rounded" col="1"></Image>
+                <Image src="~/assets/user-72-18.jpg" stretch="none" class="img-rounded" col="2"></Image>
+                <Image src="~/assets/user-72-19.jpg" stretch="none" class="img-rounded" col="3"></Image>
+                <Image src="~/assets/user-72-20.jpg" stretch="none" class="img-rounded" col="4"></Image>
+                <Image src="~/assets/user-72-21.jpg" stretch="none" class="img-rounded" col="5"></Image>
+                <Image src="~/assets/user-72-22.jpg" stretch="none" class="img-rounded" col="6"></Image>
+                <Image src="~/assets/user-72-23.jpg" stretch="none" class="img-rounded" col="7"></Image>
+                <Image src="~/assets/user-72-24.jpg" stretch="none" class="img-rounded" col="8"></Image>
+                <Image src="~/assets/user-72-20.jpg" stretch="none" class="img-rounded" col="9"></Image>
+                <Image src="~/assets/user-72-21.jpg" stretch="none" class="img-rounded" col="10"></Image>
+                <Image src="~/assets/user-72-22.jpg" stretch="none" class="img-rounded" col="11"></Image>
+                <Image src="~/assets/user-72-23.jpg" stretch="none" class="img-rounded" col="12"></Image>
+                <Image src="~/assets/user-72-24.jpg" stretch="none" class="img-rounded" col="13"></Image>
+            </GridLayout>
+        </ScrollView>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Third Tab'}">
+        <ios>
+            <Label text="ios"></Label>
+        </ios>
+        <android>
+            <Label text="android"></Label>
+        </android>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Login'}">
+       <!-- <app-login></app-login> -->
+    </StackLayout>
+</TabView>
